@@ -26,9 +26,9 @@
     <a-entity oculus-touch-controls="hand: left"></a-entity>
     <a-entity oculus-touch-controls="hand: right"></a-entity>
 
-    <!-- Añade controles de gamepad para dispositivos móviles -->
-    <a-entity gamepad-controls="hand: left"></a-entity>
-    <a-entity gamepad-controls="hand: right"></a-entity>
+    <!-- Añade los controles de las Meta Quest -->
+    <a-entity id="leftController" hand-controls="left" oculus-touch-controls></a-entity>
+    <a-entity id="rightController" hand-controls="right" oculus-touch-controls></a-entity>
   </a-scene>
 </body>
 </html>
