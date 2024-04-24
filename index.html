@@ -5,6 +5,7 @@
   <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/fernandojsg/aframe-oculus-touch-controls-component/dist/aframe-oculus-touch-controls-component.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/aframe-physics-system@4.0.1/dist/aframe-physics-system.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@3.4.0/dist/aframe-extras.gamepad-controls.min.js"></script>
 </head>
 <body>
   <a-scene physics="debug: true"> <!-- Activa la física y el modo de depuración -->
@@ -26,9 +27,16 @@
     <a-entity oculus-touch-controls="hand: left"></a-entity>
     <a-entity oculus-touch-controls="hand: right"></a-entity>
 
-    <!-- Añade los controles de las Meta Quest -->
-    <a-entity id="leftController" hand-controls="left" oculus-touch-controls></a-entity>
-    <a-entity id="rightController" hand-controls="right" oculus-touch-controls></a-entity>
+    <!-- Verifica si el dispositivo es móvil y activa los controles del gamepad -->
+    <a-entity id="gamepad" gamepad-controls="controller: 0" raycaster="objects: .clickable"></a-entity>
+
   </a-scene>
+
+  <script>
+    // Verifica si el dispositivo es móvil y si es así, activa los controles del gamepad
+    if (AFRAME.utils.device.isMobile()) {
+      document.getElementById('gamepad').setAttribute('visible', true);
+    }
+  </script>
 </body>
 </html>
