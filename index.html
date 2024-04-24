@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Mi Escena 3D</title>
-  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/fernandojsg/aframe-oculus-touch-controls-component/dist/aframe-oculus-touch-controls-component.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/aframe-physics-system@4.0.1/dist/aframe-physics-system.min.js"></script>
-  <script src="https://unpkg.com/aframe-gamepad-controls"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.4.0/dist/aframe-extras.min.js"></script>
+  <script src="https://unpkg.com/aframe-environment-component@1.3.3/dist/aframe-environment-component.min.js"></script>
+
 </head>
+
 <body>
-  <a-scene physics="debug: true"> <!-- Activa la física y el modo de depuración -->
+  <a-scene>
 
-    <!-- Crea un cubo como suelo -->
-    <a-box position="0 -1 0" rotation="-90 0 0" width="20" height="0.1" depth="20" color="#7BC8A4" static-body></a-box> <!-- Agrega el atributo static-body para que el suelo no se mueva -->
 
-    <!-- Añade un modelo 3D -->
-    <a-entity position="0 0 -5" rotation="0 180 0" scale="7 7 7" gltf-model="assets/untitled.glb" dynamic-body></a-entity> <!-- Agrega el atributo dynamic-body para que el modelo 3D reaccione a las colisiones -->
+    <a-entity position="0 0 -5" rotation="0 180 0" scale="7 7 7" gltf-model="assets/untitled.glb"></a-entity>
 
-    <!-- Añade una cámara -->
-    <a-entity id="rig" movement-controls="controls: gamepad,keyboard,nipple"
-              gamepad-controls
-              gamepad-controls-style="xr">
+
+    <a-entity id="rig" movement-controls="controls: gamepad,keyboard,nipple" gamepad-controls>
       <a-entity camera position="0 4 20" look-controls="pointerLockEnabled: true"></a-entity>
     </a-entity>
 
-    <!-- Componente de colisión para la caja -->
-    <a-box position="0 2 -5" width="4" height="4" depth="4" color="#FF0000" dynamic-body></a-box> <!-- Agrega el atributo dynamic-body para que la caja reaccione a las colisiones -->
-    
+
+
+
   </a-scene>
 </body>
+
 </html>
