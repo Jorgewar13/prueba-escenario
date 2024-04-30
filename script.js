@@ -1,10 +1,12 @@
+var debugtxt; // Definir la variable globalmente
+
 AFRAME.registerComponent('collider-check', {
     dependencies: ['raycaster'],
-  
+
     init: function () {
       console.log('ok collider check');
-      var debugtxt = document.querySelector('a-text');
-  
+      debugtxt = document.querySelector('a-text'); // Asignar el valor dentro del init
+
       this.el.addEventListener('raycaster-intersection', this.handleIntersection.bind(this));
       this.el.addEventListener('gripdown', this.handleGripDown.bind(this));
       this.el.addEventListener('gripup', this.handleGripUp.bind(this));
@@ -39,5 +41,4 @@ AFRAME.registerComponent('collider-check', {
         this.selectedObj.components["dynamic-body"].syncToPhysics();
       }
     }
-  });
-  
+});
