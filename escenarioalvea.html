@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Escenario con A-Frame</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+</head>
+<body>
+    <a-scene>
+        <!-- Cámara -->
+        <a-entity position="2 2 90">
+            <a-camera></a-camera>
+        </a-entity>
+        
+        <!-- Luces -->
+        <a-light type="ambient" color="#888"></a-light>
+        <a-light type="directional" position="-3 3 1" intensity="0.5"></a-light>
+        
+        <!-- Modelo 3D -->
+        <a-entity gltf-model="assets/Alvea.glb" scale="40 40 40" position="0 0 0" 
+         ></a-entity>
+       
+        
+        
+        
+        
+    </a-scene>
+</body>
+</html>
