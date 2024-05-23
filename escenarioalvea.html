@@ -1,29 +1,38 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Alvea</title>
-        <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-    </head>
-    <body>
-        <a-scene>
-            <!-- Cámara -->
-            <a-entity position="15 30 90" camera wasd-controls="acceleration: 400">
-                <a-camera>
-                    
-                </a-camera>
-            </a-entity>
-            
-            <!-- Luces -->
-            <a-light type="ambient" color="#666"></a-light>
-            <a-light type="directional" position="-3 3 1" intensity="1.5"></a-light>
-            
-            <!-- Modelo 3D -->
-            <a-entity gltf-model="assets/Alvea_Alvearium.glb" scale="30 30 30" position="0 0 0"></a-entity>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alvea</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+</head>
+<body>
+    <a-scene>
+        <!-- Fondo en cilindro -->
+        <a-cylinder 
+            src="ruta/a/tu/imagen.jpg" 
+            radius="200" 
+            height="100" 
+            theta-length="360" 
+            position="0 50 0" 
+            rotation="0 0 0" 
+            side="double" 
+            segments-height="1" 
+            segments-radial="36">
+        </a-cylinder>
 
-            <a-entity gltf-model="assets/Alvy-AI_Alvearium.glb" scale="7 7 7" position="-135 5 70" animation-mixer="clip: Idle_Anim_Anim  ;"></a-entity>
+        <!-- Cámara -->
+        <a-entity id="cameraRig" position="15 30 90" wasd-controls="acceleration: 400">
+            <a-camera></a-camera>
+        </a-entity>
+        
+        <!-- Luces -->
+        <a-light type="ambient" color="#546"></a-light>
+        <a-light type="directional" position="-3 3 1" intensity="1.5"></a-light>
+        
+        <!-- Modelo 3D -->
+        <a-entity gltf-model="assets/Alvea_Alvearium.glb" scale="30 30 30" position="0 0 0"></a-entity>
 
-
-        </a-scene>
-    </body>
-    </html>
+        <a-entity id="avatar" gltf-model="assets/Alvy-AI_Alvearium.glb" scale="7 7 7" position="-135 5 70" animation-mixer="clip: Idle_Anim_Anim_0_Idle_Anim_Anim;"></a-entity>
+    </a-scene>
+</body>
+</html>
